@@ -759,7 +759,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>Bezier_Slides</h1><p>Ron Shillinglaw<br/>Thu Dec 18 15:27:46 2014</p>
+<h1>Bezier_Slides</h1><p>Ron Shillinglaw<br/>Sat Dec 20 23:05:32 2014</p>
 
 <div class="slideContent" >
 
@@ -789,7 +789,7 @@ hljs.initHighlightingOnLoad();
 
 <p>\( B'(t) = (1-t)^2 P0+2(1-t)tP1+t^2 P2 \)</p>
 
-<p>See <a href="http://en.wikipedia.org/wiki/Bezier_curve">wikipedia&#39;s article</a> for more info.</p>
+<p>See <a href="http://en.wikipedia.org/wiki/Bezier_curve">wikipedia&#39;s article</a> or <a href="http://rons62.shinyapps.io/shiny/">my application</a> for more info.</p>
 
 </div>
 
@@ -801,7 +801,9 @@ hljs.initHighlightingOnLoad();
 
 <p>radius = |B(t)| / (|B(t) x B&#39;(t)|)</p>
 
-<pre><code class="r">pts=matrix(c(2,1,5,7,8,3),nrow=3,byrow=T)
+<pre><code class="r">pts=matrix(c(2,1,5,7,8,3),nrow=3,byrow=T,
+           dimnames=list(c(&quot;P0&quot;,&quot;P1&quot;,&quot;P2&quot;),c(&quot;x&quot;,&quot;y&quot;)))
+
 bp=matrix(,11,2); t=(0:10)/10
 bt0=function(t){
   (1-t)*((1-t)*pts[1,]+t*pts[2,])+
@@ -821,10 +823,10 @@ mbt0()
 <pre><code class="r">print(pts)
 </code></pre>
 
-<pre><code>     [,1] [,2]
-[1,]    2    1
-[2,]    5    7
-[3,]    8    3
+<pre><code>   x y
+P0 2 1
+P1 5 7
+P2 8 3
 </code></pre>
 
 </div>
